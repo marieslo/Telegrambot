@@ -1,11 +1,4 @@
 import requests
 
-base_key = "RUB"
-sym_key1 = "USD"
-sym_key2 = "EUR"
-amount = 1
-
-r = requests.get(f"https://api.apilayer.com/exchangerates_data/convert?to={sym_key}&from={base_key}&amount={amount}"
-resp = json.loads(r.content)
-print(resp)
-
+r = requests.get(f"https://currate.ru/api/?get=rates&pairs={base_key}{sym_key}&key=bbe2a1ac0b909431aa237bffff3c4fca")
+print(r.content)
